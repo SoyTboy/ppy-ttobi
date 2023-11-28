@@ -1,21 +1,49 @@
-let pesoIngresado
-let peso = 25
+function calcularPrimerosDiez(pesoIngresado) {
+    return pesoIngresado * 100
+    
+}
 
-if (peso < 30){
-    holliday(peso);
-}else{
-    superficie (peso);
+function calcularEntreOnceYVeinte(pesoIngresado) {
+    let resultado = calcularPrimerosDiez(10)
+    let resto = pesoIngresado  - 10
+    let calcResto = 50 * resto
+    let suma = resultado + calcResto
+    return suma
+}
+
+function calcularMayorAVeinte(pesoIngresado) {
+
+    let resultadoDos = calcularEntreOnceYVeinte(20)
+    let restoCalc = pesoIngresado - 20
+    let calcRestoTres = 20 * restoCalc
+    let sumaDos = resultadoDos+calcRestoTres
+    return sumaDos
 }
 
 function holliday(pesoIngresado) {
-    if(pesoIngresado < 20){
-        let resultado1=pesoIngresado - 20
-        let resultado2=resultado1 * 20
-        console.log(resultado2)
-    }else if(peso <= 20 && peso > 10){
-        let resultado1=peso - 10
-        let resultado2=resultado1 * 50
-        let resultado3=resultado2 + 1000
-        console.log(resultado3)
+    if (pesoIngresado <= 10) {
+
+        let resultado = calcularPrimerosDiez(pesoIngresado)
+        console.log(resultado)
+
+    }else if(pesoIngresado > 10 && pesoIngresado <= 20){
+
+        let apartado = calcularEntreOnceYVeinte(pesoIngresado)
+        console.log(apartado)
+
+    }else {
+
+        let mayor = calcularMayorAVeinte(pesoIngresado)
+        console.log(mayor)
     }
+}
+
+
+holliday(29)
+
+superficie(35)
+
+function superficie(pesoIngresado) {
+    let resultadoSuperficie = ((pesoIngresado * 4) + 7) / (pesoIngresado + 90)
+    console.log(resultadoSuperficie)
 }
